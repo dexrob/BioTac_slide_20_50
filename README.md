@@ -3,4 +3,5 @@ This repository contains tactile data and material description for texture class
 
 ## Dataset description
 This dataset concerns with 20 classes named with `mat + x`, where `x` is an index number. A snapshot of each corresponding material is shown below.
-The corresponding material description can be found in 
+![material_snaposhots](mat_collage.png "Snapshots of 20 materials")
+
