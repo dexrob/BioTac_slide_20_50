@@ -17,14 +17,23 @@ Each material constitutes a separate folder in which 50 samples are presented, n
 ### Compiled data set
 The processed data set is presented to facilitate quick implementation in PyTorch. The data can be loaded with following commands
 ```
+import torch
 from tas_utils_bs import get_trainValLoader, get_testLoader
-# data_dir = 'compiled_data/'
+# data_dir = 'compiled_data/data_folder_split/'
 # kfold_number = 0 # number of fold that is chosen as the validation fold, range 0-3
 # spike_ready = False # the data can be used for SNN training if the option is True
 # batch_size = 32
 # shuffle = True # where the data is shuffled for each epoch training 
 train_loader, val_loader, train_dataset, val_dataset = get_trainValLoader(data_dir, k=kfold_number, spike_ready=False, batch_size=batch_size, shuffle=shuffle)
 test_loader, test_dataset = get_testLoader(data_dir, spike_ready=False, batch_size=batch_size, shuffle=shuffle)
+
+'''epoch and model setting here'''
+
+for i, (XI, XB,  y) in enumerate(train_loader):
+    print(XI.shape, XB.shape, y.shape) # torch.Size([32, 6, 10, 75]) torch.Size([32, 19, 400]) torch.Size([32])
+    '''model training here'''
+
 ```
+
 
 
