@@ -1,7 +1,7 @@
 # BioTac_slide_20_50
 This repository contains tactile data and material description for texture classification, supplementary to the paper "Supervised  Autoencoder  Joint  Learning  on  Heterogeneous  TactileSensory  Data:  Improving  Material  Classification  Performance", R. Gao et al.
 
-We have included both the raw data and the processed data here. The raw data includes a comprehensive range of modalities, provided by both tactile sensors and the robot arm. The processed data includes purely the sensor data that are used in the abovementioned paper and have already been splitted in to train/validation/test sets.
+We have included both the raw data and the compiled data here. The raw data includes a comprehensive range of modalities, provided by both tactile sensors and the robot arm. The compiled data includes purely the sensor data that are used in the abovementioned paper and have already been splitted in to train/validation/test sets.
 
 ## Dataset description
 This dataset concerns with 20 classes named with `mat + x`, where `x` is an index number. A snapshot of each corresponding material is shown below and the detailed description for each material can be found in `material_properties` text file by the name index or two-letter code.
@@ -14,11 +14,11 @@ Each material constitutes a separate folder in which 50 samples are presented, n
 * For `.pt` file, it is extracted from `_bio.csv` file for each sample and formatted as a `400*44` tensor, where `400` is the sequence length and `44` is the number of the data fields, as shown in the header of `_bio.csv` file. It can be directly imported by `torch.load(filename)` and used as input data for model training.
 <br/>
 
-### Processed data set
+### Compiled data set
 The processed data set is presented to facilitate quick implementation in PyTorch. The data can be loaded with following commands
 ```
 from tas_utils_bs import get_trainValLoader, get_testLoader
-# data_dir = 
+# data_dir = 'compiled_data/'
 # kfold_number =  # number of fold that is chosen as the validation fold
 # spike_ready = False # the data can be used for SNN training if the option is True
 # batch_size = 32
