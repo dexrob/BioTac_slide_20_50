@@ -19,7 +19,7 @@ The processed data set is presented to facilitate quick implementation in PyTorc
 ```
 import torch
 from tas_utils_bs import get_trainValLoader, get_testLoader
-# data_dir = 'compiled_data/data_folder_split/'
+# data_dir = 'compiled_data/'
 # kfold_number = 0 # number of fold that is chosen as the validation fold, range 0-3
 # spike_ready = False # the data can be used for SNN training if the option is True
 # batch_size = 32
